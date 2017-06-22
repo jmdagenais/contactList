@@ -1,0 +1,7 @@
+<a routerLink="/edit/{{contact.id}}"
+  class="list-group-item contact-item">
+  <h4 class="list-group-item-heading">{{contact.name}}</h4>
+  <span>{{contact.email}}</span>
+  <span>{{contact.phoneNumber}}</span>
+  <div><i class="glyphicon glyphicon-pencil" [ngClass]="{'hidden': !pencilVisible}"></i></div>
+</a>

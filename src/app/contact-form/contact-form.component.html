@@ -1,0 +1,36 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      [(ngModel)]="contact.name"
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      [(ngModel)]="contact.email"
+      type="text"
+      class="form-control"
+      id="email"
+      name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Email</label>
+    <input
+      [(ngModel)]="contact.phoneNumber"
+      type="text"
+      class="form-control"
+      id="phone"
+      name="phone">
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="contactForm.form.invalid">Save</button>
+  <button type="button" class="btn btn-danger" *ngIf="inEdition">Delete</button>
+
+</form>

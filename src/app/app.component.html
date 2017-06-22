@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<top-bar></top-bar>
+
+<div class="container">
+  <!--<button *ngIf="!editionMode" (click)="toggleEdition()">New contact</button>-->
+  <!--<contact-edit (completed)="toggleEdition()" *ngIf="editionMode"></contact-edit>-->
+  <!--<hr>-->
+  <router-outlet></router-outlet>
+
+</div>
