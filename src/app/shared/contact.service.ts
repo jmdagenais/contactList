@@ -17,6 +17,7 @@ export class ContactServcice {
     return this.backand.object.getList('contacts', { pageSize: 1000 })
       .then((data) => {
         this.contacts = data.data;
+        window['contacts'] = data.data;
         return this.contacts;
       })
   }
@@ -43,7 +44,15 @@ export class ContactServcice {
       })
   }
 
-  getOptions(): any {
+  deleteContact(contact: Contact) {
+    return this.backand.object.remove('contacts', contact.id)
+      .then((data: any) => {
+        let idx: number = this.contacts.indexOf(contact);
+        this.contacts.splice(idx, 1);
+      })
+  }
+
+  private getOptions(): any {
     return {
       returnObject: true
     };

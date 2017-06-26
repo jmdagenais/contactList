@@ -45,14 +45,19 @@ export class ContactFormComponent implements OnInit {
       this.contactService.updateContact(this.contact)
         .then((data) => {
           this.router.navigate(['/']);
-        })
+        });
     } else {
       this.contactService.createContact(this.contact)
         .then((data) => {
           this.router.navigate(['/']);
-        })
+        });
     }
   }
 
-
+  onDelete() {
+    this.contactService.deleteContact(this.contact)
+      .then((data) => {
+        this.router.navigate(['/']);
+      });
+  }
 }

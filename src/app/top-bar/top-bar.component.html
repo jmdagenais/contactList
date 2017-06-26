@@ -6,8 +6,14 @@
 
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a routerLink="/">All</a></li>
-        <li *ngFor="let cat of categories"><a [routerLink]="" [queryParams]="{filter: cat }">{{cat}}</a></li>
+        <li [ngClass]="{active: filter === ''}">
+          <a routerLink="/">All</a>
+        </li>
+        <li
+          *ngFor="let cat of categories"
+          [ngClass]="{active: filter === cat}">
+          <a [routerLink]="" [queryParams]="{filter: cat }">{{cat}}</a>
+        </li>
       </ul>
     </div>
   </div>
