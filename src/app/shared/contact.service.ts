@@ -17,7 +17,6 @@ export class ContactServcice {
     return this.backand.object.getList('contacts', { pageSize: 1000 })
       .then((data) => {
         this.contacts = data.data;
-        window['contacts'] = data.data;
         return this.contacts;
       })
   }
